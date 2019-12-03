@@ -135,30 +135,32 @@ export default class SearchBar extends React.PureComponent {
           <SearchIcon />
         </View>
 
-        <View
-          key={
-            showCancelButton
-              ? 'visible-cancel-button'
-              : 'layout-only-cancel-button'
-          }
-          style={[
-            styles.buttonContainer,
-            { opacity: showCancelButton ? 1 : 0 },
-          ]}>
-          <TouchableOpacity
-            style={styles.button}
-            hitSlop={{ top: 15, bottom: 15, left: 15, right: 20 }}
-            onLayout={this._handleLayoutCancelButton}
-            onPress={this._handlePressCancelButton}>
-            <Text
-              style={{
-                fontSize: 17,
-                color: this.props.tintColor || '#007AFF',
-              }}>
-              {this.props.cancelButtonText || 'Cancel'}
-            </Text>
-          </TouchableOpacity>
-        </View>
+        {!this.props.hideCancelButton && (
+          <View
+            key={
+              showCancelButton
+                ? 'visible-cancel-button'
+                : 'layout-only-cancel-button'
+            }
+            style={[
+              styles.buttonContainer,
+              { opacity: showCancelButton ? 1 : 0 },
+            ]}>
+            <TouchableOpacity
+              style={styles.button}
+              hitSlop={{ top: 15, bottom: 15, left: 15, right: 20 }}
+              onLayout={this._handleLayoutCancelButton}
+              onPress={this._handlePressCancelButton}>
+              <Text
+                style={{
+                  fontSize: 17,
+                  color: this.props.tintColor || '#007AFF',
+                }}>
+                {this.props.cancelButtonText || 'Cancel'}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        )}
       </View>
     );
   }
