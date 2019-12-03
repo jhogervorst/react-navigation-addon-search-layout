@@ -115,7 +115,11 @@ export default class SearchBar extends React.PureComponent {
 
     return (
       <View style={styles.container}>
-        <View style={[styles.searchContainer, { width: inputWidth }]}>
+        <View
+          style={[
+            styles.searchContainer,
+            { width: inputWidth - (this.props.headerLeftWidth || 0) }
+          ]}>
           <TextInput
             ref={view => {
               this._textInput = view;
