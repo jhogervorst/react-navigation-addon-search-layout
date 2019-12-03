@@ -125,6 +125,7 @@ export default class Header extends React.PureComponent {
         <View style={styles.appBar}>
           <View style={[StyleSheet.absoluteFill, styles.header]}>
             {this._maybeRenderBackButton()}
+            {this.props.headerLeft}
             {this.props.children}
           </View>
         </View>
