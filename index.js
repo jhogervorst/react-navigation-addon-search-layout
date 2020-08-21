@@ -1,1 +1,3 @@
-export default from './src/SearchLayout';
+import SearchLayout from "./src/SearchLayout";
+
+export default SearchLayout;
