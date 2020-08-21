@@ -29,7 +29,7 @@ export default class Header extends React.PureComponent {
     // and depend on react-native-safe-area-view to tell us.
     const ANDROID_STATUS_BAR_HEIGHT = getStatusBarHeight
       ? getStatusBarHeight()
-      : StatusBar.currentHeight;
+      : StatusBar.currentHeight || 0;
     const STATUSBAR_HEIGHT =
       Platform.OS === 'ios' ? (hasNotch ? 40 : 25) : ANDROID_STATUS_BAR_HEIGHT;
 
